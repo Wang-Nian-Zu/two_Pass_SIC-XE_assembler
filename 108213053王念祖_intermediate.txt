@@ -1,0 +1,46 @@
+{"symbol": "COPY", "mnemonic": "START", "operand": "1000", "lineNum": 7, "location": 4096}
+{"symbol": "FIRST", "mnemonic": "STL", "operand": "RETADR", "lineNum": 8, "location": 4096}
+{"mnemonic": "LDB", "operand": "#LENGTH", "lineNum": 9, "location": 4099}
+{"mnemonic": "BASE", "operand": "LENGTH", "lineNum": 10}
+{"symbol": "CLOOP", "mnemonic": "+JSUB", "operand": "RDREC", "lineNum": 11, "location": 4102}
+{"mnemonic": "LDA", "operand": "LENGTH", "lineNum": 12, "location": 4106}
+{"mnemonic": "COMP", "operand": "#0", "lineNum": 13, "location": 4109}
+{"mnemonic": "JEQ", "operand": "ENDFIL", "lineNum": 14, "location": 4112}
+{"mnemonic": "+JSUB", "operand": "WRREC", "lineNum": 15, "location": 4115}
+{"mnemonic": "J", "operand": "CLOOP", "lineNum": 16, "location": 4119}
+{"symbol": "ENDFIL", "mnemonic": "LDA", "operand": "EOF", "lineNum": 17, "location": 4122}
+{"mnemonic": "STA", "operand": "BUFFER", "lineNum": 18, "location": 4125}
+{"mnemonic": "LDA", "operand": "#3", "lineNum": 19, "location": 4128}
+{"mnemonic": "STA", "operand": "LENGTH", "lineNum": 21, "location": 4131}
+{"mnemonic": "+JSUB", "operand": "WRREC", "lineNum": 22, "location": 4134}
+{"mnemonic": "J", "operand": "@RETADR", "lineNum": 23, "location": 4138}
+{"symbol": "EOF", "mnemonic": "BYTE", "operand": "C'EOF'", "lineNum": 24, "location": 4141}
+{"symbol": "RETADR", "mnemonic": "RESW", "operand": "1", "lineNum": 25, "location": 4144}
+{"symbol": "LENGTH", "mnemonic": "RESW", "operand": "1", "lineNum": 26, "location": 4147}
+{"symbol": "BUFFER", "mnemonic": "RESB", "operand": "4096", "lineNum": 27, "location": 4150}
+{"symbol": "RDREC", "mnemonic": "CLEAR", "operand": "X", "lineNum": 31, "location": 8246}
+{"mnemonic": "CLEAR", "operand": "A", "lineNum": 32, "location": 8248}
+{"mnemonic": "CLEAR", "operand": "S", "lineNum": 33, "location": 8250}
+{"mnemonic": "+LDT", "operand": "#4096", "lineNum": 34, "location": 8252}
+{"symbol": "RLOOP", "mnemonic": "TD", "operand": "INPUT", "lineNum": 35, "location": 8256}
+{"mnemonic": "JEQ", "operand": "RLOOP", "lineNum": 36, "location": 8259}
+{"mnemonic": "RD", "operand": "INPUT", "lineNum": 37, "location": 8262}
+{"mnemonic": "COMPR", "operand": ["A", "S"], "lineNum": 38, "location": 8265}
+{"mnemonic": "JEQ", "operand": "EXIT", "lineNum": 39, "location": 8267}
+{"mnemonic": "STCH", "operand": ["BUFFER", ",X"], "lineNum": 40, "location": 8270}
+{"mnemonic": "TIXR", "operand": "T", "lineNum": 41, "location": 8273}
+{"mnemonic": "JLT", "operand": "RLOOP", "lineNum": 42, "location": 8275}
+{"symbol": "EXIT", "mnemonic": "STX", "operand": "LENGTH", "lineNum": 43, "location": 8278}
+{"mnemonic": "RSUB", "lineNum": 44, "location": 8281}
+{"symbol": "INPUT", "mnemonic": "BYTE", "operand": "X'F1'", "lineNum": 45, "location": 8284}
+{"symbol": "WRREC", "mnemonic": "CLEAR", "operand": "X", "lineNum": 50, "location": 8285}
+{"mnemonic": "LDT", "operand": "LENGTH", "lineNum": 51, "location": 8287}
+{"symbol": "WLOOP", "mnemonic": "TD", "operand": "OUTPUT", "lineNum": 52, "location": 8290}
+{"mnemonic": "JEQ", "operand": "WLOOP", "lineNum": 53, "location": 8293}
+{"mnemonic": "LDCH", "operand": "BUFFER", "lineNum": 54, "location": 8296}
+{"mnemonic": "WD", "operand": "OUTPUT", "lineNum": 55, "location": 8299}
+{"mnemonic": "TIXR", "operand": "T", "lineNum": 56, "location": 8302}
+{"mnemonic": "JLT", "operand": "WLOOP", "lineNum": 57, "location": 8304}
+{"mnemonic": "RSUB", "lineNum": 58, "location": 8307}
+{"symbol": "OUTPUT", "mnemonic": "BYTE", "operand": "X'05'", "lineNum": 59, "location": 8310}
+{"mnemonic": "END", "operand": "FIRST", "lineNum": 60}
